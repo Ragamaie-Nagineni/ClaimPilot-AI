@@ -4,22 +4,30 @@ import { analyzeClaim } from "../services/api";
 export default function UploadForm({setLoading,setResult,}) {
     const [files, setFiles] = useState([]);
 
-    const handleSubmit = async () => {
-        if (files.length === 0) {
-            alert("Please upload at least one document");
-            return;
-        }
-        try {
-            setLoading(true);
-            const result = await analyzeClaim(files);
-            setResult(result);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoading(false);
+  const handleSubmit = async () => {
 
-        }
-    };
+    try {
+
+        setLoading(true);
+
+        const result =
+            await analyzeClaim(files);
+
+        console.log("BACKEND RESPONSE:");
+        console.log(result);
+
+        setResult(result);
+
+    } catch (error) {
+
+        console.error(error);
+
+    } finally {
+
+        setLoading(false);
+
+    }
+};
 
     return (
         <div>

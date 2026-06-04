@@ -3,6 +3,7 @@ import { useState } from "react";
 import UploadForm from "../../components/UploadForm";
 import Processing from "../../components/Processing";
 import ResultCard from "../../components/ResultCard";
+import Header from "../../components/Header/Header.jsx";
 
 export default function Dashboard() {
 
@@ -15,7 +16,7 @@ export default function Dashboard() {
   return (
 
     <div>
-
+      <Header/>
       {!loading && !result && (
 
         <UploadForm

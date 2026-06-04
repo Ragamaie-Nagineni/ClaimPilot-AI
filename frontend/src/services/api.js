@@ -1,4 +1,4 @@
-/* import axios from "axios";
+ import axios from "axios";
 
 export const analyzeClaim =
 async (files) => {
@@ -20,11 +20,4 @@ async (files) => {
         );
 
     return response.data;
-}; */
-import axios from "axios";
-
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
-
-export default API;
+}; 

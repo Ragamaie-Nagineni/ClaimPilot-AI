@@ -8,6 +8,37 @@ const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash"
 });
 
+async function retryGemini(fn, retries = 3) {
+
+    for (let i = 0; i < retries; i++) {
+
+        try {
+            return await fn();
+
+        } catch (err) {
+
+            if (
+                err.status === 503 &&
+                i < retries - 1
+            ) {
+
+                console.log(
+                    `Gemini busy. Retry ${i + 1}...`
+                );
+
+                await new Promise(
+                    resolve =>
+                        setTimeout(resolve, 2000)
+                );
+
+                continue;
+            }
+
+            throw err;
+        }
+    }
+}
+
 export async function extractClaimDataFromImage(file) {
 
     const imagePart = {

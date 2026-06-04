@@ -3,15 +3,9 @@ import express from "express";
 import upload from "../middleware/upload.js";
 
 import evaluateClaim from "../services/ruleEngine.js";
-
-import {
-    extractClaimDataFromImage,
-    extractClaimDataFromText
-} from "../services/geminiService.js";
-
-import {
-    extractTextFromPDF
-} from "../services/pdfService.js";
+import { saveClaim } from "../services/claimService.js";
+import { extractClaimDataFromImage, extractClaimDataFromText } from "../services/geminiService.js";
+import { extractTextFromPDF } from "../services/pdfService.js";
 
 const router = express.Router();
 
@@ -80,8 +74,13 @@ router.post(
 
             console.log("DECISION:");
             console.log(decision);
-
+            const claimId =
+                await saveClaim(
+                    extractedData,
+                    decision
+                );
             res.json({
+                claimId,
                 extractedData,
                 decision
             });

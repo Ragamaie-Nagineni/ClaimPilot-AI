@@ -34,6 +34,9 @@ router.post(
                 const text =
                     await extractTextFromPDF(file);
 
+                console.log("PDF TEXT:");
+                console.log(text);
+
                 geminiOutput =
                     await extractClaimDataFromText(
                         text
@@ -55,6 +58,9 @@ router.post(
                 });
             }
 
+            console.log("RAW GEMINI OUTPUT:");
+            console.log(geminiOutput);
+
             const cleaned =
                 geminiOutput
                     .replace(/```json/g, "")
@@ -64,10 +70,16 @@ router.post(
             const extractedData =
                 JSON.parse(cleaned);
 
+            console.log("EXTRACTED DATA:");
+            console.log(extractedData);
+
             const decision =
                 evaluateClaim(
                     extractedData
                 );
+
+            console.log("DECISION:");
+            console.log(decision);
 
             res.json({
                 extractedData,

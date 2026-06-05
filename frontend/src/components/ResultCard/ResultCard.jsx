@@ -1,7 +1,7 @@
 import "./ResultCard.css";
 
 export default function ResultCard({ result }) {
-
+    
     const decision =
         result?.decision?.decision || "UNKNOWN";
 
@@ -20,7 +20,13 @@ export default function ResultCard({ result }) {
     return (
 
         <div className="result-container">
-
+            <div className="claim-id">
+            Claim ID: {
+                result?.claim_id ||
+                result?.decision?.claim_id ||
+                `CLM-${Date.now()}`
+            }
+        </div>
             <div
                 className={`result-status ${
                     decision.toLowerCase()

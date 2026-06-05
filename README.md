@@ -338,25 +338,27 @@ JWT_SECRET=
 
 ### Home Page
 
-![Home](docs/homepage.png)
+![Home](./Screenshots/Home%20Page.png)
 
 ### Upload Interface
 
-![Upload](docs/upload.png)
+![Upload](./Screenshots/Upload%20Interface.png)
 
 ### Processing Workflow
 
-![Processing](docs/processing.png)
+![Processing](./Screenshots/Processing.png)
 
 ### Approved Claim
 
-![Approved](docs/approved.png)
+![Approved](./Screenshots/Approved.png)
 
 ### Database Records
 
-![Database](docs/database.png)
+![Database](./Screenshots/Database.png)
 
----
+### Rejected Claim
+
+![Rejected](./Screenshots/Rejected.png)
 
 ## Future Enhancements
 

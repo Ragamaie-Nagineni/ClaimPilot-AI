@@ -148,7 +148,58 @@ Store Claim in Database
           ▼
 Display Results Dashboard
 ```
+## Decision Logic Flow
 
+```text
+Document Uploaded
+        │
+        ▼
+Extract Information
+        │
+        ▼
+Validate Documents
+        │
+        ├── Missing Documents?
+        │         │
+        │         ▼
+        │      REJECTED
+        │
+        ▼
+Validate Medical Rules
+        │
+        ├── Not Medically Necessary?
+        │         │
+        │         ▼
+        │      REJECTED
+        │
+        ▼
+Validate Coverage
+        │
+        ├── Service Not Covered?
+        │         │
+        │         ▼
+        │      REJECTED
+        │
+        ▼
+Validate Amount
+        │
+        ├── Amount > Policy Limit?
+        │         │
+        │         ▼
+        │   PARTIAL APPROVAL
+        │
+        ▼
+APPROVED
+```
+## Assumptions
+
+1. Uploaded documents contain sufficient information for claim processing.
+2. Doctor registration numbers are assumed valid if present.
+3. Policy reimbursement limits are predefined in the rule engine.
+4. OPD consultation services are considered covered services.
+5. Medical necessity is inferred from extracted diagnosis information.
+6. Missing mandatory documents result in claim rejection.
+7. AI extraction confidence is dependent on document quality and OCR readability.
 ---
 
 ## Tech Stack

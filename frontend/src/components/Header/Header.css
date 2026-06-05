@@ -3,17 +3,12 @@
     min-height: 50px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 60px 20px;
-
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(59,130,246,.15),
-            transparent 60%
-        );
+    padding: 40px 20px;
+    /*background: rgba(59,130,246,.15);*/
 }
 
 .header-content {

@@ -335,30 +335,17 @@ JWT_SECRET=
 ---
 
 ## Screenshots
+![Home](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Home%20Page.png)
 
-### Home Page
+![Upload](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Upload%20Interface.png)
 
-![Home](./Screenshots/Home%20Page.png)
+![Processing](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Processing.png)
 
-### Upload Interface
+![Approved](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Approved.png)
 
-![Upload](./Screenshots/Upload%20Interface.png)
+![Database](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Database.png)
 
-### Processing Workflow
-
-![Processing](./Screenshots/Processing.png)
-
-### Approved Claim
-
-![Approved](./Screenshots/Approved.png)
-
-### Database Records
-
-![Database](./Screenshots/Database.png)
-
-### Rejected Claim
-
-![Rejected](./Screenshots/Rejected.png)
+![Rejected](https://raw.githubusercontent.com/Ragamaie-Nagineni/ClaimPilot-AI/main/Screenshots/Rejected.png)
 
 ## Future Enhancements
 
